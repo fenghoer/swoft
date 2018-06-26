@@ -11,14 +11,14 @@ return [
     'serverDispatcher' => [
         'middlewares' => [
             \Swoft\View\Middleware\ViewMiddleware::class,
-            // \Swoft\Devtool\Middleware\DevToolMiddleware::class,
+            \Swoft\Devtool\Middleware\DevToolMiddleware::class,
             // \Swoft\Session\Middleware\SessionMiddleware::class,
         ]
     ],
     'httpRouter'       => [
-        'ignoreLastSlash'  => false,
-        'tmpCacheNumber' => 1000,
-        'matchAll'       => '',
+        'ignoreLastSlash' => false,
+        'tmpCacheNumber'  => 1000,
+        'matchAll'        => '',
     ],
     'requestParser'    => [
         'parsers' => [
@@ -31,8 +31,8 @@ return [
     'cache'            => [
         'driver' => 'redis',
     ],
-    'demoRedis' => [
-        'class' => \Swoft\Redis\Redis::class,
+    'demoRedis'        => [
+        'class'    => \Swoft\Redis\Redis::class,
         'poolName' => 'demoRedis'
     ]
 ];

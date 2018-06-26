@@ -11,6 +11,7 @@
 namespace App\Controllers;
 
 use Swoft\App;
+use Swoft\Core\Coroutine;
 use Swoft\Http\Server\Bean\Annotation\Controller;
 use Swoft\Http\Server\Bean\Annotation\RequestMapping;
 use Swoft\Log\Log;
@@ -33,6 +34,12 @@ class IndexController
      */
     public function index(): array
     {
+        go(function (){
+            co::sleep(0.5);
+            echo 'hello';
+        });
+        go('test');
+        go(['a', 'method']);
         $name = 'Swoft';
         $notes = [
             'New Generation of PHP Framework',
